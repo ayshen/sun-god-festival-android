@@ -1,4 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">S</string>
+    <string name="app_name">Sun God Festival</string>
+
+    <string-array name="stage_names">
+        <item>Sun God Stage</item>
+        <item>Dance Stage</item>
+        <item>Midway</item>
+    </string-array>
+
+    <!--
+    Strings that define how to read the lineup XML.
+
+    lineup_xml_tag_performance: the name of the tags that define a single
+            performance.
+
+    lineup_xml_attr_artist: the name of the attribute that defines which
+            artist is performing.
+
+    lineup_xml_attr_opener: the name of the attribute that defines who will
+            be the opener for the artist that is performing in this set.
+
+    lineup_xml_attr_begin: the name of the attribute that specifies when
+            the performance begins.
+
+    lineup_xml_attr_end: the name of the attribute that specifies when the
+            performance ends.
+    -->
+    <string name="lineup_xml_tag_performance">set</string>
+    <string name="lineup_xml_attr_artist">artist</string>
+    <string name="lineup_xml_attr_opener">with</string>
+    <string name="lineup_xml_attr_begin">begin</string>
+    <string name="lineup_xml_attr_end">end</string>
 </resources>

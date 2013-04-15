@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--
+    Class names for each of the major sections.
+    List the fully-qualified name of a Fragment here to include it in the
+    sections that will be available from the navigation spinner.
+
+    WARNING: This array MUST be kept in sync with
+    R.array.navigation_spinner_items to prevent navigation errors. If there
+    are more items in the navigation spinner than there are fragments listed
+    here, the application will crash!
+    -->
+    <string-array name="navigation_fragment_class_names">
+        <item>edu.ucsd.sgf.app.LineupPagerFragment</item>
+    </string-array>
+
+
+    <!--
+    Titles for the major application sections. These will appear in the
+    navigation spinner in the action bar.
+
+    WARNING: This array MUST be kept in sync with
+    R.array.navigation_fragment_class_names to prevent navigation errors.
+    See above for details.
+    -->
+    <string-array name="navigation_spinner_items">
+        <item>Lineup</item>
+    </string-array>
+
+
+    <!--
+    Names of XML files containing the lineups for each stage.
+
+    These files must be created in res/xml in the project directory. For
+    example,
+        <item>hello</item>
+    if declared below, would require a corresponding file
+        res/xml/hello.xml
+
+    The names of the tags that contain the performance data and their
+    attributes are configured in res/values/strings.xml under the names
+        lineup_xml_*
+    -->
+    <string-array name="lineup_files">
+        <item>main_stage_lineup</item>
+        <item>dance_stage_lineup</item>
+        <item>midway_lineup</item>
+    </string-array>
+
+</resources>
