@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Primary 1: brown -->
+    <color name="primary1_light">#774d27</color>
+    <color name="primary1_dark">#52302c</color>
+
+    <!-- Primary 2: orange -->
+    <color name="primary2_light">#ff6a00</color>
+    <color name="primary2_dark">#bd4600</color>
+
+    <!-- Primary 3: yellow -->
+    <color name="primary3_light">#ffcd00</color>
+    <color name="primary3_dark">#916928</color>
+
+    <!-- Primary 4: green -->
+    <color name="primary4_light">#009877</color>
+    <color name="primary4_dark">#007549</color>
+
+    <!-- Primary 5: purple -->
+    <color name="primary5_light">#331330</color>
+    <color name="primary5_dark">#250f23</color>
+
+    <!-- Secondary 1: gray -->
+    <color name="secondary1_light">#a3a9ac</color>
+    <color name="secondary1_dark">#5c666f</color>
+
+    <!-- Secondary 2: blue -->
+    <color name="secondary2_light">#003d51</color>
+    <color name="secondary2_dark">#012939</color>
+
+
+    <!-- Color for the dividing line at the bottom of the action bar. -->
+    <color name="actionbar_divider_color">@color/primary2_light</color>
+
+
+    <!-- Background color for lineup views. -->
+    <color name="lineup_background_color">@color/primary5_light</color>
+
+    <!-- Predominant background color for performances in lineup views. --> 
+    <color name="lineup_primary_event_background_color">@color/primary4_dark</color>
+
+    <!-- Subordinate background color for performances in lineup views.
+    Used for when there is no changeover between performances. --> 
+    <color name="lineup_secondary_event_background_color">@color/primary4_light</color>
+
+    <!-- Text color for lineup views. -->
+    <color name="lineup_text_color">#ffffff</color>
+</resources>
