@@ -24,13 +24,23 @@ public class Time implements Comparable<Time> {
     }
 
 
+    @Override
     public int compareTo(Time that) {
         return this.intValue() - that.intValue();
     }
 
 
+    @Override
     public String toString() {
         return String.format("%02d:%02d", hr, min);
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if(o.getClass() != this.getClass())
+            return false;
+        return ((Time)o).compareTo(this) == 0;
     }
 
 
@@ -42,6 +52,11 @@ public class Time implements Comparable<Time> {
             meridianum = 'p';
 
         return String.format("%d:%02d%c", hour, min, meridianum);
+    }
+
+
+    public String to(Time that) {
+        return this.pretty() + " - " + that.pretty();
     }
 
 

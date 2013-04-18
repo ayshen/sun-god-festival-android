@@ -17,13 +17,16 @@ import edu.ucsd.sgf.view.LineupViewPager;
 public class LineupFragment extends SherlockFragment {
 
     private Performance[] mLineup = null;
+    private int mRange;
 
     private LineupView mView = null;
 
 
-    public static LineupFragment instantiate(Performance[] lineup) {
+    public static LineupFragment instantiate(Performance[] lineup,
+            int timeRange) {
         LineupFragment f = new LineupFragment();
         f.mLineup = lineup;
+        f.mRange = timeRange;
         return f;
     }
 
@@ -41,7 +44,7 @@ public class LineupFragment extends SherlockFragment {
             return null;
         }
 
-        mView = LineupView.instantiate(getActivity(), mLineup);
+        mView = LineupView.instantiate(getActivity(), mLineup, mRange);
         return mView;
     }
 

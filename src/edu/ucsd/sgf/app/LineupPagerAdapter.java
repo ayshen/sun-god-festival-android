@@ -9,6 +9,7 @@ import android.util.Log;
 
 import edu.ucsd.sgf.R;
 import edu.ucsd.sgf.util.Performance;
+import edu.ucsd.sgf.util.Time;
 import edu.ucsd.sgf.util.Reflect;
 import edu.ucsd.sgf.view.LineupViewPager;
 
@@ -17,6 +18,7 @@ public class LineupPagerAdapter extends FragmentPagerAdapter {
 
     private Performance[][] mLineups = null;
     private String[] mStageNames = null;
+    private int timeRange = 0;
 
     private LineupFragment[] mFragments = null;
 
@@ -27,6 +29,9 @@ public class LineupPagerAdapter extends FragmentPagerAdapter {
         // Load the lineups from their XML files.
         mLineups = Reflect.loadLineupsFromStringArray(res,
                 R.array.lineup_files);
+
+        // Compute the maximum time range.
+        computeTimeRange();
 
         // Load the stage names.
         try { mStageNames = res.getStringArray(R.array.stage_names); }
@@ -77,7 +82,7 @@ public class LineupPagerAdapter extends FragmentPagerAdapter {
         if(mFragments[position] == null) {
             // Create and cache the fragment.
             mFragments[position] = LineupFragment.instantiate(
-                    mLineups[position]);
+                    mLineups[position], timeRange);
         }
         // Yield the cached fragment.
         return mFragments[position];
@@ -86,5 +91,34 @@ public class LineupPagerAdapter extends FragmentPagerAdapter {
 
     public Performance[][] getLineups() {
         return mLineups;
+    }
+
+
+    public void update(float scrollOffset, float zoom) {
+        for(LineupFragment f: mFragments)
+            if(f != null && f.getLineupView() != null)
+                f.getLineupView().update(scrollOffset, zoom);
+    }
+
+
+    private void computeTimeRange() {
+        int minBegin = (new Time(24, 0)).intValue();
+        int maxEnd = (new Time(0, 0)).intValue();
+
+        for(Performance[] lineup: mLineups) {
+            for(Performance p: lineup) {
+                if(p.begin.intValue() < minBegin)
+                    minBegin = p.begin.intValue();
+                if(p.end.intValue() > maxEnd)
+                    maxEnd = p.end.intValue();
+            }
+        }
+
+        timeRange = maxEnd - minBegin;
+    }
+
+
+    public int getTimeRange() {
+        return timeRange;
     }
 }
