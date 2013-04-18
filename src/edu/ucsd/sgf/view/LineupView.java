@@ -18,8 +18,6 @@ public class LineupView extends View {
 
     private final static int TRANSPARENT = 0x00000000;
 
-    private ScrollFlingAnimator mAnimator = null;
-
     private int width = 0;
     private int height = 0;
 
@@ -61,10 +59,8 @@ public class LineupView extends View {
         if(mBitmap != null)
             mBitmap.recycle();
         mBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.RGB_565);
-
         mCanvas = new Canvas(mBitmap);
 
-        render();
         invalidate();
     }
 
@@ -74,52 +70,5 @@ public class LineupView extends View {
         canvas.drawBitmap(mBitmap, null,
                 new Rect(0, 0, canvas.getWidth(), canvas.getHeight()),
                 null);
-    }
-
-
-    public void pointerDown() {
-        if(mAnimator != null) {
-            removeCallbacks(mAnimator);
-            mAnimator = null;
-        }
-    }
-
-
-    public void fling(float vy) {
-        if(mAnimator != null)
-            removeCallbacks(mAnimator);
-        post(mAnimator = new ScrollFlingAnimator(vy));
-    }
-
-
-    public void scroll(float dy) {
-    }
-
-
-    public void click(MotionEvent e) {
-    }
-
-
-    public void scale(float scaleFactor) {
-    }
-
-
-    private void render() {
-        mPaint.setStrokeWidth(4.0f);
-        mPaint.setColor(primaryEventBackgroundColor);
-        mCanvas.drawColor(backgroundColor);
-        mCanvas.drawLine(0, 0, width, height, mPaint);
-        mCanvas.drawLine(0, height, width, 0, mPaint);
-    }
-
-
-    public class ScrollFlingAnimator implements Runnable {
-
-        public ScrollFlingAnimator(float vy) {
-        }
-
-        @Override
-        public void run() {
-        }
     }
 }
