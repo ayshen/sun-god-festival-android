@@ -15,21 +15,14 @@ import edu.ucsd.sgf.view.LineupViewPager;
 
 public class LineupPagerAdapter extends FragmentPagerAdapter {
 
-    private LineupViewPager mPager = null;
     private Performance[][] mLineups = null;
     private String[] mStageNames = null;
 
     private LineupFragment[] mFragments = null;
 
 
-    public LineupPagerAdapter(FragmentManager fmgr, Resources res,
-            LineupViewPager pager) {
+    public LineupPagerAdapter(FragmentManager fmgr, Resources res) {
         super(fmgr);
-
-        // Keep a reference to the specific ViewPager subclass that we are
-        // using, so that we can keep all of our fragments updated on touch
-        // events.
-        mPager = pager;
 
         // Load the lineups from their XML files.
         mLineups = Reflect.loadLineupsFromStringArray(res,
@@ -84,9 +77,14 @@ public class LineupPagerAdapter extends FragmentPagerAdapter {
         if(mFragments[position] == null) {
             // Create and cache the fragment.
             mFragments[position] = LineupFragment.instantiate(
-                    mLineups[position], mPager);
+                    mLineups[position]);
         }
         // Yield the cached fragment.
         return mFragments[position];
+    }
+
+
+    public Performance[][] getLineups() {
+        return mLineups;
     }
 }

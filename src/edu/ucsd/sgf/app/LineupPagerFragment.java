@@ -49,11 +49,10 @@ public class LineupPagerFragment extends SherlockFragment {
         tabs.setGravity(android.view.Gravity.CENTER_VERTICAL);
 
         mPager = (LineupViewPager)layout.findViewById(android.R.id.tabcontent);
+
         mAdapter = new LineupPagerAdapter(
                 this.getChildFragmentManager(),
-                getActivity().getResources(),
-                mPager);
-
+                getActivity().getResources());
         mPager.setAdapter(mAdapter);
 
         return layout;

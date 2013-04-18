@@ -12,11 +12,14 @@ import android.view.View;
 
 import edu.ucsd.sgf.R;
 import edu.ucsd.sgf.util.Performance;
+import edu.ucsd.sgf.util.Time;
 
 
 public class LineupView extends View {
 
     private final static int TRANSPARENT = 0x00000000;
+
+    private Performance[] mLineup = null;
 
     private int width = 0;
     private int height = 0;
@@ -32,6 +35,14 @@ public class LineupView extends View {
 
     private float scrollOffset = 0.0f;
     private float maxScrollOffset = 0.0f;
+
+
+    public static LineupView instantiate(Context context,
+            Performance[] lineup) {
+        LineupView v = new LineupView(context);
+        v.mLineup = lineup;
+        return v;
+    }
 
 
     public LineupView(Context context) {
