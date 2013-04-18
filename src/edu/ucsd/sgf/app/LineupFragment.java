@@ -44,7 +44,6 @@ public class LineupFragment extends SherlockFragment {
             return null;
         }
 
-        mPager.addGestureObserver(this);
         mView = new LineupView(getActivity());
         return mView;
     }
@@ -53,7 +52,6 @@ public class LineupFragment extends SherlockFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        mPager.removeGestureObserver(this);
     }
 
 

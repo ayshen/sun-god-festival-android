@@ -41,7 +41,7 @@ public class S extends SherlockFragmentActivity
 
         // For our own usage, be verbose in the system log about how fragments
         // are used.
-        FragmentManager.enableDebugLogging(true);
+        //FragmentManager.enableDebugLogging(true);
 
         // Load the names of the fragment classes for each section.
         try { mFragmentClassNames = getResources().getStringArray(

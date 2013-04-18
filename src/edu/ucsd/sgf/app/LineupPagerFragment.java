@@ -2,6 +2,7 @@ package edu.ucsd.sgf.app;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.support.v4.view.PagerTabStrip;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,6 +41,12 @@ public class LineupPagerFragment extends SherlockFragment {
 
         View layout = inflater.inflate(R.layout.lineup_pager, container,
                 false);
+
+        PagerTabStrip tabs = (PagerTabStrip)layout.findViewById(
+                android.R.id.tabs);
+        tabs.setTabIndicatorColor(getActivity().getResources().getColor(
+                R.color.actionbar_divider_color));
+        tabs.setGravity(android.view.Gravity.CENTER_VERTICAL);
 
         mPager = (LineupViewPager)layout.findViewById(android.R.id.tabcontent);
         mAdapter = new LineupPagerAdapter(

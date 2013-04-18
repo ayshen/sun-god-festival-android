@@ -6,5 +6,11 @@
   <edu.ucsd.sgf.view.LineupViewPager
       android:id="@android:id/tabcontent"
       android:layout_width="fill_parent"
-      android:layout_height="fill_parent" />
+      android:layout_height="fill_parent">
+    <android.support.v4.view.PagerTabStrip
+        android:id="@android:id/tabs"
+        android:layout_gravity="top"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp" />
+  </edu.ucsd.sgf.view.LineupViewPager>
 </LinearLayout>

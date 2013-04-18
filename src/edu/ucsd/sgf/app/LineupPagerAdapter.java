@@ -74,6 +74,12 @@ public class LineupPagerAdapter extends FragmentPagerAdapter {
 
 
     @Override
+    public CharSequence getPageTitle(int position) {
+        return mStageNames[position];
+    }
+
+
+    @Override
     public Fragment getItem(int position) {
         if(mFragments[position] == null) {
             // Create and cache the fragment.
