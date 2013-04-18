@@ -14,6 +14,7 @@
     -->
     <string-array name="navigation_fragment_class_names">
         <item>edu.ucsd.sgf.app.LineupPagerFragment</item>
+        <item>edu.ucsd.sgf.app.InfoPagerFragment</item>
     </string-array>
 
 
@@ -27,6 +28,7 @@
     -->
     <string-array name="navigation_spinner_items">
         <item>Lineup</item>
+        <item>About</item>
     </string-array>
 
 
@@ -49,4 +51,13 @@
         <item>midway_lineup</item>
     </string-array>
 
+
+    <!--
+    -->
+    <array name="info_layout_names">
+        <item>info_welcome</item>
+        <item>info_water</item>
+        <item>info_sgfc</item>
+        <item>info_bus</item>
+    </array>
 </resources>

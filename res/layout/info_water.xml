@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingLeft="8dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:paddingRight="8dp">
+  <TextView android:id="@android:id/text1"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/info_water_intro" />
+  <TableLayout
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content">
+    <TableRow>
+      <TextView android:text="1"
+          android:textAppearance="?android:attr/textAppearanceLarge" />
+      <TextView android:text="@string/info_water_1" />
+    </TableRow>
+    <TableRow>
+      <TextView android:text="2"
+          android:textAppearance="?android:attr/textAppearanceLarge" />
+      <TextView android:text="@string/info_water_2" />
+    </TableRow>
+    <TableRow>
+      <TextView
+          android:text="3"
+          android:textAppearance="?android:attr/textAppearanceLarge" />
+      <TextView android:text="@string/info_water_3" />
+    </TableRow>
+  </TableLayout>
+</LinearLayout>
