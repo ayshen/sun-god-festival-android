@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="info_welcome_text">Welcome to the 2013 Sun God Festival! Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud excertation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum eu fugiat nulla pariatur. Excepteur sint occaecae cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="info_welcome_text">The most anticipated event of the year is finally here! The 2012 Sun God Festival, which marks the 30th anniversary of the campus-wide tradition, will feature three stages, student performances, vendor booths, carnival activities, and much more. Check out Silversun Pickups and Chiddy Bang rocking the Main Stage; Paul van Dyk and Tommy Trash on the Dance Stage; and Cirque Berzerk alongside several comedians and student performers at the midway. There\'s something for everyone this year.</string>
 
-    <string name="info_water_intro">But Fedallah, putting a finger on his lip, slid over the bulwarks to take the boat\'s steering oar, and Ahab, swinging the cutting-tackle towards him, commanded the ship\'s sailors to stand by to lower.</string>
-    <string name="info_water_1">Bring your reusable, non-glass, empty water bottle for free water throughout the day, available at the booths marked on the map.</string>
-    <string name="info_water_2">Pick up a souvenir Sun God Festival water bottle at the merchandise booth for $5 (plastic) or $7 (aluminum) and refill it throughout the day for free.</string>
-    <string name="info_water_3">Single-use cups are available at the water booths for $1 per cup. Due to health regulations, these cups cannot be refilled. We encourage you to buy or bring your own reusable bottle.</string>
+    <string name="info_water_intro">Minimize waste and stay hydrated!</string>
+    <string name="info_water_1">Bring your reusable, non-glass, empty water bottle. They can be refilled for free all day!</string>
+    <string name="info_water_2">Buy the official Sun God Festival water bottle at the merchandise booth for $5 (plastic) or $7 (aluminum) and refill it throughout the day for free.</string>
+    <string name="info_water_3">Single-use disposable cups are available at the water booths for $1 per cup. We encourage you to buy or bring your own reusable bottle.</string>
 
-    <string name="info_sgfc_text1">The \"About the Music\" Grant Program raises money for underdeveloped music programs in primary schools.</string>
-    <string name="info_sgfc_text2">What would the Sun God Festival be without artists? Donate and help the next generation of musicians find their talent!</string>
+    <string name="info_sgfc_text1">Associated Students is proud to present Sun God for a Cause, a program that strives to increase philanthropic efforts while celebrating the most highly anticipated tradition on campus. Sun God for a Cause has partnered with the \"It\'s About the Music\" grant, sponsored by FM 94.9, Lincoln Financial Media Company of California, and the San Diego County Office of Education, in an effort to raise money and awareness to support music education in San Diego County elementary schools. \"It\'s About the Music\" has distributed over $40,000 in grants to public primary schools whose music programs have been eliminated or lack funding.</string>
+    <string name="info_sgfc_text2">Donations will be collected at Triton Outfitters during the Sun God Festival. What would the Sun God Festival be without artists? Donate and help the next generation of musicians find their talent!</string>
     <string name="info_sgfc_text3">Find out more at https://www.facebook.com/SunGod4acause</string>
 
     <string name="info_bus_intro">At last I could go no further; I was exhausted with the violence of my emotion and of my flight, and I staggered and fell by the wayside. That was near the bridge that crosses the canal by the gasworks. I fell and lay still.</string>
