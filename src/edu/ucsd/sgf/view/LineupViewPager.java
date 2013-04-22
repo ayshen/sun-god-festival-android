@@ -24,6 +24,10 @@ public class LineupViewPager extends ViewPager
     public final static int FONT_SIZE = 12;
     public final static float MINUTES_PER_TEXT_LINE = 5.0f;
 
+    private final static int TOUCH_MODE_INITIAL_STATE = 0;
+    private final static int TOUCH_MODE_VSCROLL = 1;
+    private final static int TOUCH_MODE_PAGE = 2;
+
     private ScrollFlingAnimator mAnimator = null;
 
     private GestureDetector mGesturer = null;
@@ -35,7 +39,15 @@ public class LineupViewPager extends ViewPager
     private float maxScrollOffset = 0.0f;
     private float fontHeight = 0.0f;
 
+    private int mTouchMode = TOUCH_MODE_INITIAL_STATE;
 
+
+    /** Set up gesture detectors and measurement constants.
+    Register this view to respond to scroll, fling, and scale gestures. Also
+    decide on how tall five minutes will be when we are zoomed all the way out.
+    @param context {@link android.content.Context} object used for display
+    metrics, to help determine how tall five minutes is.
+    */
     private void init(Context context) {
         mGesturer = new GestureDetector(context, this);
         mScaler = new ScaleGestureDetector(context, this);
@@ -58,6 +70,10 @@ public class LineupViewPager extends ViewPager
     }
 
 
+    /** Set the adapter that provides the Fragments for this view.
+    Catch the adapter on the way in so that we can compute how tall we
+    expect the view to be when it's zoomed all the way out.
+    */
     @Override
     public void setAdapter(PagerAdapter adapter) {
         super.setAdapter(adapter);
@@ -66,6 +82,9 @@ public class LineupViewPager extends ViewPager
     }
 
 
+    /** Be notified when the dimensions of this view change.
+    We'll use it to compute limits for vertical scrolling.
+    */
     @Override
     protected void onSizeChanged(int w, int h, int _w, int _h) {
         super.onSizeChanged(w, h, _w, _h);
@@ -75,26 +94,51 @@ public class LineupViewPager extends ViewPager
 
     @Override
     public boolean onTouchEvent(MotionEvent e) {
-        boolean parentResult = super.onTouchEvent(e);
+        boolean parentResult = false;
+
+        // Pass the touch event to the gesture detectors, so we can detect
+        // things like scrolling, fling, and pinch-to-zoom.
         boolean gesturerResult = mGesturer.onTouchEvent(e);
         boolean scalerResult = mScaler.onTouchEvent(e);
+
+        // If the user hasn't locked this view into vertical scrolling,
+        // allow the ViewPager implementation to have an opportunity to change
+        // pages. 
+        if(mTouchMode == TOUCH_MODE_INITIAL_STATE ||
+                mTouchMode == TOUCH_MODE_PAGE)
+            parentResult = super.onTouchEvent(e);
+
+        if(e.getAction() == MotionEvent.ACTION_UP)
+            mTouchMode = TOUCH_MODE_INITIAL_STATE;
+
         return parentResult || gesturerResult || scalerResult;
     }
 
 
     @Override
     public boolean onDown(MotionEvent e) {
+        // Stop any currently running fling animation. This gives an impression
+        // of having "caught" the view.
         if(mAnimator != null) {
             removeCallbacks(mAnimator);
             mAnimator = null;
         }
+
+        // Reset the touch mode, because we don't know what the user is going
+        // to do next.
+        mTouchMode = TOUCH_MODE_INITIAL_STATE;
+
         return true;
     }
 
 
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float vx, float vy) {
-        post(mAnimator = new ScrollFlingAnimator((int)vy / 20));
+        // If we are scrolling vertically, let the user throw the view around.
+        // Horizontal flings are handled by the ViewPager implementation, which
+        // should be called if this one isn't triggered.
+        if(mTouchMode == TOUCH_MODE_VSCROLL)
+            post(mAnimator = new ScrollFlingAnimator((int)vy / 20));
         return true;
     }
 
@@ -106,8 +150,34 @@ public class LineupViewPager extends ViewPager
     @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2,
             float dx, float dy) {
+        // Scroll vertically. This happens regardless of whether the user is
+        // changing pages.
         scrollOffset = clamp(scrollOffset + dy, 0, maxScrollOffset);
+
+        // Update all the sub-views.
         getLineupAdapter().update(scrollOffset, zoom);
+
+        // Try to infer if the user is trying to scroll vertically or
+        // horizontally. If so, set the touch mode so we can lock into vertical
+        // scrolling if necessary.
+        if(mTouchMode == TOUCH_MODE_INITIAL_STATE) {
+
+            if(Math.abs(dy) >= 2 * Math.abs(dx)) {
+                // Set the touch mode to vertical scrolling only.
+                mTouchMode = TOUCH_MODE_VSCROLL;
+
+                // Force the ViewPager implementation to return to resting
+                // state on the current page, if it has been tensioned out of
+                // place during scroll.
+                MotionEvent e3 = MotionEvent.obtain(e2);
+                e3.setAction(MotionEvent.ACTION_CANCEL);
+                super.onTouchEvent(e3);
+            }
+            else if(Math.abs(dx) >= 2 * Math.abs(dy)) {
+                mTouchMode = TOUCH_MODE_PAGE;
+            }
+        }
+
         return true;
     }
 
@@ -128,15 +198,28 @@ public class LineupViewPager extends ViewPager
     }
 
 
+    /** Handle the view being scaled with a pinch-to-zoom gesture.
+    @param detector {@link android.view.ScaleGestureDetector} with all the
+    information about the gesture.
+    */
     @Override
     public boolean onScale(ScaleGestureDetector detector) {
+        // Preserve the relative scroll offset (from 0.0 to 1.0 as a percentage
+        // of the height of the view).
         float ratio = (detector.getFocusY() + scrollOffset) / (zoom * baseMaxY);
-        zoom *= detector.getScaleFactor();
-        if(zoom < 1.0f)
-            zoom = 1.0f;
+
+        // Zoom the view. Make sure it doesn't get too small or too big.
+        zoom = clamp(zoom * detector.getScaleFactor(), 1.0f, 8.0f);
+
+        // Recompute the vertical scroll limits.
         recomputeMaxScrollOffset();
+
+        // Restore the relative scroll offset. This gives the impression that
+        // the scaling was centered around the gesture focus.
         scrollOffset = clamp(ratio * zoom * baseMaxY - detector.getFocusY(),
                 0, maxScrollOffset);
+
+        // Re-render all the sub-views.
         getLineupAdapter().update(scrollOffset, zoom);
         return true;
     }
@@ -146,11 +229,21 @@ public class LineupViewPager extends ViewPager
     public void onScaleEnd(ScaleGestureDetector detector) { }
 
 
+    /** Internal access to the LineupPagerAdapter that controls the sub-views.
+    Mostly here for convenience, so we don't have to cast getAdapter() every
+    time we use it for updating the sub-views.
+    */
     private LineupPagerAdapter getLineupAdapter() {
         return (LineupPagerAdapter)getAdapter();
     }
 
 
+    /** Utility function for clamping a value to a range.
+    @param value the input value.
+    @param min the minimum allowed value.
+    @param max the maximum allowed value.
+    @return min if value is too small; max if value is too big; or value.
+    */
     private float clamp(float value, float min, float max) {
         if(value < min)
             return min;
@@ -160,13 +253,28 @@ public class LineupViewPager extends ViewPager
     }
 
 
+    /** Recompute the maximum offset allowed for the view content, which
+    determines where the perceived bottom of the view content will be.
+    This is used to update the vertical scroll properties of this view after
+    it is subjected to scale gestures.
+    */
     private void recomputeMaxScrollOffset() {
+        // The max scroll offset is the length of the content under its current
+        // zoom level, less the height of the view because we're drawing from
+        // the top.
         maxScrollOffset = baseMaxY * zoom - getHeight() +
+                // This is a magic number for getting a little space back from
+                // the PagerTabStrip that we've anchored at the top of this
+                // view for displaying the stage names.
                 TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 48,
                 getContext().getResources().getDisplayMetrics());
     }
 
 
+    /*
+    Animation function used to continue vertical scrolling after a fling
+    gesture. The scroll gradually slows down.
+    */
     public class ScrollFlingAnimator implements Runnable {
 
         private final static int PIXEL_VELOCITY_THRESHOLD = 10;
@@ -187,7 +295,11 @@ public class LineupViewPager extends ViewPager
 
         @Override
         public void run() {
+            // Apply a drag force the view.
             if(mDeltaY <= PIXEL_VELOCITY_THRESHOLD) {
+
+                // Velocity is too small to use the exponential decay function.
+                // Just bring it closer to 0.
                 mDeltaY -= DENORMALIZED_DECELERATION;
                 if(mDeltaY < 0)
                     mDeltaY = 0;
@@ -195,11 +307,13 @@ public class LineupViewPager extends ViewPager
             else
                 mDeltaY = (int)(mDeltaY * FRICTION_COEFFICIENT);
 
+            // Update the scroll state.
             if(mSignDeltaY == 1)
                 scrollOffset -= mDeltaY;
             else
                 scrollOffset += mDeltaY;
 
+            // Clamp the scroll state to the content limits.
             if(scrollOffset < 0) {
                 scrollOffset = 0;
                 mDeltaY = 0;
@@ -209,11 +323,14 @@ public class LineupViewPager extends ViewPager
                 mDeltaY = 0;
             }
 
+            // Schedule this animation to be run again if there's any visible
+            // change left to display.
             if(mDeltaY == 0)
                 mAnimator = null;
             else
                 postDelayed(this, SCROLL_REPEAT_INTERVAL);
 
+            // Redraw all the sub-views to corroborate the new view state.
             getLineupAdapter().update(scrollOffset, zoom);
             invalidate();
         }
