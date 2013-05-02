@@ -21,7 +21,7 @@ public class LineupViewPager extends ViewPager
         implements GestureDetector.OnGestureListener,
         ScaleGestureDetector.OnScaleGestureListener {
 
-    public final static int FONT_SIZE = 12;
+    public final static int FONT_SIZE = 14;
     public final static float MINUTES_PER_TEXT_LINE = 5.0f;
 
     private final static int TOUCH_MODE_INITIAL_STATE = 0;
@@ -41,6 +41,9 @@ public class LineupViewPager extends ViewPager
 
     private int mTouchMode = TOUCH_MODE_INITIAL_STATE;
 
+    private static int PAGERTABSTRIP_HEIGHT_DIP = 48;
+    public static float PAGERTABSTRIP_HEIGHT = 0.0f;
+
 
     /** Set up gesture detectors and measurement constants.
     Register this view to respond to scroll, fling, and scale gestures. Also
@@ -55,6 +58,13 @@ public class LineupViewPager extends ViewPager
         p.setTextSize(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
                 FONT_SIZE, context.getResources().getDisplayMetrics()));
         fontHeight = p.descent() - p.ascent();
+
+        // This is a magic number for getting a little space back from
+        // the PagerTabStrip that we've anchored at the top of this
+        // view for displaying the stage names.
+        PAGERTABSTRIP_HEIGHT = TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP, PAGERTABSTRIP_HEIGHT_DIP,
+                context.getResources().getDisplayMetrics());
     }
 
 
@@ -186,9 +196,16 @@ public class LineupViewPager extends ViewPager
     public void onShowPress(MotionEvent e) { }
 
 
+    /** Handle a lineup view being tapped.
+    @param e {@link android.view.MotionEvent} with the information about where
+    the lineup view was touched.
+    */
     @Override
     public boolean onSingleTapUp(MotionEvent e) {
-        return true;
+        LineupFragment f = (LineupFragment)getLineupAdapter().getItem(
+                this.getCurrentItem());
+        return f.getLineupView().onSingleTapUp(e);
+        //return true;
     }
 
 
@@ -262,12 +279,7 @@ public class LineupViewPager extends ViewPager
         // The max scroll offset is the length of the content under its current
         // zoom level, less the height of the view because we're drawing from
         // the top.
-        maxScrollOffset = baseMaxY * zoom - getHeight() +
-                // This is a magic number for getting a little space back from
-                // the PagerTabStrip that we've anchored at the top of this
-                // view for displaying the stage names.
-                TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 48,
-                getContext().getResources().getDisplayMetrics());
+        maxScrollOffset = baseMaxY * zoom - getHeight() + PAGERTABSTRIP_HEIGHT;
     }
 
 
