@@ -235,10 +235,16 @@ public class LineupView extends View {
         for(Performance p: mLineup) {
             if(p.begin.intValue() <= targetTime &&
                     p.end.intValue() >= targetTime) {
+/*
                 android.widget.Toast.makeText(
                         getContext(),
                         p.artist,
                         android.widget.Toast.LENGTH_SHORT).show();
+*/
+                android.content.Intent artistDetailIntent = new android.content.Intent();
+                artistDetailIntent.setClass(getContext(), edu.ucsd.sgf.app.ArtistDetailActivity.class);
+                artistDetailIntent.putExtra("artist_name", p.artist);
+                getContext().startActivity(artistDetailIntent);
                 return true;
             }
         }
