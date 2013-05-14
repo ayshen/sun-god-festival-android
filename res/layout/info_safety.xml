@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Don&#39;t miss the music!" style="@style/SectionTitle" />
+
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="If you or one of your friends are experiencing an alcohol related emergency:" style="@style/Question" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Be a Responsible Friend. Call 858-534-HELP (858-534-4357) immediately!" style="@style/Question" />
+
+<View android:layout_width="fill_parent" android:layout_height="8dp" />
+
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Take action and ask about the Responsible Action Protocol (RAP):" style="@style/Question" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="If your friend has been drinking and is not responsive, has bluish skin tone, or is breathing irregularly, Call 911 immediately! Never leave a friend alone and never let them &#34;sleep it off.&#34;" style="@style/Answer" />
+
+<View android:layout_width="fill_parent" android:layout_height="8dp" />
+
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Here are some useful tips so you and your friends can enjoy every moment of this year&#39;s Sun God Festival:" style="@style/Question" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Alternate non-alcoholic drinks (drink a bottle of water between alcohol drinks)." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Determine in advance the number of drinks, and don&#39;t exceed that!" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Choose not to drink alcohol or use drugs." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Use a designated driver (DD&#39;s qualify for great RADD Card discounts)." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Sign up for A.S. Safe Rides!" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Eat before or during an event. Be sure to check in with your Res-Life Offices for day-of snacks and survival kits." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Tell your friends to let you know when you&#39;ve had too much to drink." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Keep track of the number of drinks (especially the amount of liquor)." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="One drink = 12 oz beer, 5 oz wine, or 1.5 oz liquor." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Pace your drinks to one or less per hour." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Choose an alcohol look-alike instead." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Avoid drinking games." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Do not mix drugs and alcohol -- be aware of dangerous drug combinations that could result in illness or even death." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Watch over your friends and peers. If you see someone in health-threatening conditions, do not be afraid to reach out to a security guard, police officer, event staff or event volunteer to ask for help. Your health and safety is our first priority at the Sun God Festival." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Try to keep the party small." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Make sure your guests are considerate of your neighbors and don&#39;t do things like park cars on lawns or vandalize property." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Keep the party indoors to cut down on clean-up time and to reduce the amount of noise. Shut the windows and walk outside from time to time to check the noise level." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="If you are under 21, don&#39;t consume alcohol." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="DO NOT serve alcohol to anyone under 21." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="If your neighbors call or stop by to tell you the party is too loud, listen and turn down the volume..." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Cooperate with police if they show up. Have a calm, sober person speak with them. If they ask you to break up the party, DO IT. It&#39;s okay to call police yourself if the party gets out of hand." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="If a guest has had too much to drink, don&#39;t let them drive home. Call a taxi or arrange for a ride with another guest who is sober, or invite them to stay over." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Acquaint yourself with the San Diego County social host laws and the consequences of breaking those laws. If caught breaking these laws, social hosts will be held accountable and may be: 1) cited/arrested, 2) fined up to $1000 or more, 3) serve up to 6 months in jail, and 4) be billed for law enforcement services." />
+
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/SectionTitle" android:text="A.S. Safe Rides" />
+<TextView android:text="@string/saferides1" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="@string/saferides2" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="@string/saferides3" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="@string/saferides4" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+
+</LinearLayout>
+</ScrollView>

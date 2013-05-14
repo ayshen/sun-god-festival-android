@@ -1,0 +1,13 @@
+<resources>
+    <string name="faq_section_no">Prohibited items</string>
+    <string name="faq_section_general">General</string>
+    <string name="faq_section_possessions">May I bring...?</string>
+    <string name="faq_section_accomodations">Will there be...?</string>
+    <string name="faq_section_transport">Parking and transportation</string>
+    <string name="faq_section_ticketing">Tickets, wristbands, and re-entry</string>
+
+    <string name="saferides1">A.S. Safe Rides is a FREE service provided by the Associated Students for registered UCSD undergraduate students who have completed the online Safe Rides registration. AS Safe Rides allows students to get 3 free rides per quarter from areas in La Jolla, Pacific Beach, Clairemont, University City, Mission Bay, Ocean Beach, Del Mar, Hillcrest, Mira Mesa, San Diego State University, and the Gaslamp Quarter/Downtown to your home.</string>
+    <string name="saferides2">AS Safe Rides operates from 11:00 PM to 3:00 AM Tuesday,Thursday, Friday, and Saturday nights during the academic year beginning October 9th (excluding university and national holidays). Safe Rides only operates during the academic quarter and not during breaks or over the summer.</string>
+    <string name="saferides3">Safe Rides is not just for students who have been drinking. It is designed to provide a safe ride home for any student in an uncomfortable or unexpected situation. Each individual riding needs to be registered for Safe Rides at a least day in advance and must present their UCSD ID at the time of using the service.</string>
+    <string name="saferides4">For more information on A.S. Safe Rides and to register online, please visit http://as.ucsd.edu/saferides .</string>
+</resources>

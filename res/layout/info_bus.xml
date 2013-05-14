@@ -1,16 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<LinearLayout
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-  <TextView
-      android:layout_width="fill_parent"
-      android:layout_height="fill_parent"
-      android:paddingLeft="8dp"
-      android:paddingTop="8dp"
-      android:paddingRight="8dp"
-      android:paddingBottom="8dp"
-      android:text="@string/info_bus_intro"
-  />
+
+<TextView android:text="Where can I park?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="Patrons are strongly encouraged to use alternative transportation to get to campus. Those needing to park are encouraged to use the Regents or East parking lots. A permit is required to park on campus and they are available for purchase at kiosks in the parking areas. The Hopkins Parking Structure will be closed on the day of the festival. The Regents/East shuttles will run extended service hours until 12:30am. Please note that there is no shuttle service to the Baseball Field lot (P701)." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="When will Hopkins Drive be closed?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="Hopkins Drive will close on Thursday, May 16th at 7pm and will be remain closed to all vehicular traffic until noon on Saturday, May 18th." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+
+<TextView android:text="Shuttle schedules" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/SectionTitle" />
+<TableLayout
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingBottom="8dp"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:stretchColumns="0">
+  <TableRow>
+    <TextView android:text="Regents/East parking" android:textStyle="bold" />
+    <TextView android:text="every 12 minutes" />
+  </TableRow>
+  <TableRow>
+    <View />
+    <TextView android:text="until 12:30am" />
+  </TableRow>
+  <TextView android:text="Note: there is no Regents/East shuttle service to the baseball field lot (P701)." />
+  <TableRow>
+    <TextView android:text="Campus loop" android:textStyle="bold" />
+    <TextView android:text="every 20 minutes" />
+  </TableRow>
+  <TableRow>
+    <View />
+    <TextView android:text="until 11:00pm" />
+  </TableRow>
+  <TextView android:text="Stops for festival entrances will be at Peterson Loop for the main entrance and the corner of Scholars Drive North and Hopkins Drive for the North Point entrance." />
+  <TableRow>
+    <TextView android:text="Arriba/Nobel" android:textStyle="bold" />
+    <TextView android:text="every 10 minutes" />
+  </TableRow>
+  <TableRow>
+    <View />
+    <TextView android:text="until 12:30am" />
+  </TableRow>
+  <TableRow>
+    <TextView android:text="Mesa" android:textStyle="bold" />
+    <TextView android:text="every 30 minutes" />
+  </TableRow>
+  <TableRow>
+    <View />
+    <TextView android:text="until 12:30am" />
+  </TableRow>
+</TableLayout>
+
 </LinearLayout>
+</ScrollView>

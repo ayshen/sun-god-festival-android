@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" android:paddingTop="8dp" android:text="The Sun God Festival is an accessible event for guests with disabilities. It is our mission to provide the best experience for all event attendees." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" android:text="Please feel free to call our ADA Guest Services Hotline at (858) 864-8242 to reach a liaison who will happily assist with providing a seamless Sun God experience. The ADA Guest Services Hotline is available from 8:00am to 4:00pm up to Wednesday, May 15 and from 8:00am to 1:00am on Thursday, May 16 and Friday, May 17." />
+
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" android:text="Parking" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" android:text="For your convenience ADA parking will be available in 3 convenient locations for both the Sun God Festival and the Sun God Festival Box Office:" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Lot P357 (Rady School) – Friday, May 17 only" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Lot 304 (OceanView Terrace) – Thursday, May 16 and Friday, May 17" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Hopkins Parking Structure – Thursday, May 16 only" />
+
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" android:text="Ticketing" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" android:text="Please call our Guest Services Liaison at (858) 864-8242 upon arrival at any of our ADA Parking Locations, ADA Event Entrances or the Sun God Festival Box Office for assistance with receiving your Sun God Festival wristband." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" android:text="For UCSD Undergraduates: A valid UCSD undergraduate ID is required to receive a Sun God Festival wristband, while supplies last, subject to venue capacity." />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" android:text="For Guest Ticketholders: Your Sun God Festival ticket and a Photo ID are required to receive your Sun God Festival wristband." />
+
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" android:text="Venue Access" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" android:text="The Sun God Festival offers 3 ADA Accessible event entrances to RIMAC Field:" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="ADA Ramp located on Ridgewalk" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Main Festival Entrance at the RIMAC Ramp" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Northpoint Drive entrance to Ridgewalk" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" android:text="Guests with disabilities who are parked in Lot 357, Lot 304 or the Hopkins Parking Structure may exit via the ADA Ramp from RIMAC Field to Ridgewalk at any time or please call (858) 864-8242 to request our ADA Guest Services team who can assist patrons with disabilities with entering or exiting the Festival via the elevator in the RIMAC Arena lobby." />
+
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" android:text="Sun God Avenue Access" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" android:text="Access between RIMAC Field and the Sun God Avenue vendor village is available via 4 Yellow ADA ramps located along Hopkins Drive." />
+
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" android:text="Seating and restrooms" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" android:text="The Sun God Festival provides ADA seating areas throughout the Festival grounds, including reserved sections at each of our Stages:" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Sun God Stage: Located at the center Mix Position" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Midway: ADA Reserved seating will be designated with stickers" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="Dance Stage: Located at the Mix Position" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" android:text="ADA restrooms will be available at all public restroom areas at the Sun God Festival." />
+
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" android:text="Assistive listening devices" />
+<TextView android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" android:text="The Sun God Festival offers Assistive Listening Devices upon request. Please contact the ADA Guest Services Hotline at (858) 864-8242 for more information." />
+
+</LinearLayout>
+</ScrollView>

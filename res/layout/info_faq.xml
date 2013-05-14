@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+<TextView android:text="@string/faq_section_general"
+    style="@style/SectionTitle"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" />
+<TextView android:text="Where is the festival being held?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="RIMAC Field on the north end of the UC San Diego Campus." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="What are the hours of the festival?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="3pm to 12am (midnight)." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="I am a UCSD undergraduate student, am I guaranteed entry?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="No – all UCSD undergraduate students must pick up a festival wristband at the Sun God Festival Box Office while supplies last, subject to venue capacity. A valid UCSD undergraduate ID is required to receive a wristband. See the Tickets section below for more details about wristband distribution." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="I have a guest ticket, am I guaranteed a festival wristband?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="Yes. Guest ticket holders are guaranteed a wristband. Guest tickets must be redeemed for a festival wristband at the Sun God Festival Box Office on Marshall Field on Friday, May 17, 2013 between 12pm (noon) and 11pm." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="Is the festival rain or shine?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="Yes." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="Is the festival all ages?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="Yes." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="What do I need with me?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="You must be wearing your festival wristband at all times and carry valid photo ID. We encourage you to bring a reusable, non-glass water bottle so you can enjoy free water throughout the event!" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="Will you be posting set times in advance?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="Yes. Set times will be posted on this website page during the week of the festival." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="Are there opportunities to volunteer at the event?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="Yes! If you’re interested in helping out at this year’s festival, please fill out the Volunteer Application." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="Can I pass out flyers at the festival?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="If you are interested in passing out flyers, please contact the AS Concerts &amp; Events Office prior to the festival via avpconcerts@ucsd.edu. You must be approved in advance to distribute any materials at the Sun God Festival." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="Will there be Sun God Festival merchandise sold?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="Yes, official Sun God Festival merchandise will be sold through Triton Outfitters in the weeks leading up to and on the day of the festival, while supplies last." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="Will there be wifi on the field?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="We cannot guarantee wifi access on RIMAC Field, but attendees should be able to utilize the UCSD-PROTECTED or UCSD-GUEST Wi-Fi networks (as applicable)." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+
+<TextView android:text="@string/faq_section_no"
+    style="@style/SectionTitle"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" />
+<TextView android:text="NO Alcohol" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" />
+<TextView android:text="NO Backpacks" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" />
+<TextView android:text="NO Drugs or drug paraphernalia" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" />
+<TextView android:text="NO Knives, weapons, etc." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" />
+<TextView android:text="NO Bicycles or unicycles" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" />
+<TextView android:text="NO Skateboards or rollerskates" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" />
+<TextView android:text="NO Professional cameras" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" />
+<TextView android:text="NO Video cameras" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" />
+<TextView android:text="NO Audio recording devices" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" />
+<TextView android:text="NO Glass containers, cans, cups, or coolers" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" />
+<TextView android:text="NO Disposable water bottles" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" />
+<TextView android:text="NO Outside food or beverages" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" />
+<TextView android:text="NO CamelBaks" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" />
+<TextView android:text="NO Musical instruments" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" />
+<TextView android:text="NO Chains or chain wallets" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" />
+<TextView android:text="NO Chairs" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" />
+<TextView android:text="NO Stuffed animals" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" />
+<TextView android:text="NO Pets" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/ListItem" />
+
+<TextView android:text="@string/faq_section_possessions"
+    style="@style/SectionTitle"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" />
+<TextView android:text="Can I bring a backpack? Skateboard? Umbrella? Chair? Instrument?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="All patrons are asked to leave these items at home. Backpacks and other medium or large bags will not be permitted. Small bags may be permitted, but are subject to search. Please see above for details on which items are prohibited at the Sun God Festival." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="Can I bring outside food/beverage?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="No disposable water bottles are allowed in the festival, even if they are sealed. Only empty, reusable, non-glass water bottles will be allowed. No other outside food or beverage is permitted." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="Can I bring a camera?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="No video or professional cameras with a removable lens will be permitted. Point and shoot cameras only." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+
+<TextView android:text="@string/faq_section_ticketing"
+    style="@style/SectionTitle"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" />
+<TextView android:text="When and where will wristbands be distributed?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="For your convenience, the Sun God Festival Box Office will be open on Thursday, May 16th, 2013 from 12pm to 7pm and will reopen on Friday, May 17th, 2013 at 12pm. Wristbands will be distributed to UCSD undergraduate students with valid UCSD ID while supplies last, subject to venue capacity. The Sun God Festival Box Office will be located on Marshall Field (adjacent to the Marshall Upper Apartments). Early line-up will not be permitted more than one hour prior to opening." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="Where will the Festival Box Office be located? What are its hours?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="The Festival Box Office will be located on Marshall Field. The Festival Box Office will be open 12pm-7pm on Thursday, May 16th and will reopen on Friday, May 17th at 12pm." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="I am an international or extension student, am I eligible for a free wristband?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="It depends. International students whose PID begins with the letter &#33;A&#33; are eligible for undergraduate wristbands. All other international students and all UCSD Extension students must obtain a guest ticket in order to gain entry into the festival. Guest tickets will be available online at the UCSD Box Office website ONLY between April 6th and May 16th, while supplies last. There are a limited number of student guest tickets available for sale." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="I graduated early/took the quarter off - do I need to purchase a ticket?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="Not a problem! Entry is free for all undergraduate students enrolled at UC San Diego for at least one quarter during the 2012-2013 school year. Summer Sessions are not applicable. Bring your valid UC San Diego undergraduate student ID to the Sun God Festival Box Office on Marshall Field to pick up your wristband, while supplies last, subject to venue capacity. Please note: Lost UCSD ID's cannot be replaced for students who are not currently registered at UCSD. This includes early graduates or students not registered for Spring Quarter. There are no exceptions." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="I graduated early this year, but lost my student ID. Can I still get a wristband?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="Sorry, but a valid UCSD undergraduate ID is required to receive a wristband. Lost IDs for recently graduated students are not replaceable. No exceptions. Please contact the Campus Cards Office for more information." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="I bought a student-guest, graduate student, staff or faculty ticket but lost my receipt. What do I do?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="Please log in to your account at the UC San Diego Box Office website to re-print your receipt from your order history. If you need assistance please contact the UC San Diego Box Office." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="I bought a guest ticket, but I am an undergraduate student – am I guaranteed entry?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="Only if you use that guest ticket for yourself. All UCSD undergraduate students must pick up a festival wristband at the Sun God Festival Box Office while supplies last, subject to venue capacity. A valid UCSD undergraduate ID is required to receive a wristband." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="Will there be tickets sold at the event?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="No tickets will be sold at the Sun God Box Office on Marshall Field on either May 16th or May 17th. Student guest, graduate student, staff and faculty tickets will only be sold through the UC San Diego Box Office website between April 6th and May 16th, while supplies last. UCSD Alumni should visit the Sun God Festival page on the UCSD Alumni website for more information about the limited number of Alumni tickets available." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="Where will the festival entrance be located?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="Attendees may enter the festival via the RIMAC Arena ramp on Ridge Walk or at the North Entrance located at Northpoint Drive." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="What is the re-entry policy?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="Re-entry is allowed for the entirety of the festival with a valid festival wristband, subject to Event Management protocols." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="May I pickup a wristband for my guest or fellow UCSD undergrad?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="No. Undergraduates cannot pick up wristbands for their guest with a student guest ticket or their fellow undergraduate with that student's UCSD ID. Student guests do not need their UCSD undergraduate present at the Box Office. The festival wristband must be placed directly onto every patron and may not be tampered with or transferred." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="Can I slide off my wristband and give it to a friend?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="No, festival wristbands are non-transferable. Tampered wristbands will be confiscated and patron will not be admitted to the festival. Sun God Festival wristbands are property of the Associated Students and may be inspected or revoked by event staff and security at their discretion. Tampered, transferred or otherwise questionable wristbands will be brought to the attention of the event producer and security and, under staff discretion, may be voided immediately." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="Can I sell my wristband or guest-ticket to another person?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="No, festival wristbands are non-transferable. Scalping is strictly prohibited and patrons who are caught scalping or counterfeiting wristbands will have their ticket or wristband voided and revoked." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+<TextView android:text="I don't know anyone at UC San Diego - how can I attend?" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Question" />
+<TextView android:text="Sorry. This event is not open to the public." android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/Answer" />
+
+</LinearLayout>
+</ScrollView>

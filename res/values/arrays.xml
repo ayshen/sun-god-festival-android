@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--
+    Titles for the major application sections. These will appear in the
+    navigation spinner in the action bar.
+
+    WARNING: This array MUST be kept in sync with
+    R.array.navigation_fragment_class_names to prevent navigation errors.
+    See above for details.
+    -->
+    <string-array name="navigation_spinner_items">
+        <item>Lineup</item>
+        <item>Map</item>
+        <item>About</item>
+    </string-array>
 
 
     <!--
@@ -14,21 +27,23 @@
     -->
     <string-array name="navigation_fragment_class_names">
         <item>edu.ucsd.sgf.app.LineupPagerFragment</item>
+        <item>edu.ucsd.sgf.app.MapFragment</item>
         <item>edu.ucsd.sgf.app.InfoPagerFragment</item>
     </string-array>
 
 
     <!--
-    Titles for the major application sections. These will appear in the
-    navigation spinner in the action bar.
+    Names of the stages.
 
-    WARNING: This array MUST be kept in sync with
-    R.array.navigation_fragment_class_names to prevent navigation errors.
-    See above for details.
+    WARNING: this array MUST be kept in sync with R.array.lineup_files
+    (in res/values/arrays.xml). If there are more lineups than stages listed
+    here, they will not be displayed. If there are more stage names than
+    lineups, the application may crash!
     -->
-    <string-array name="navigation_spinner_items">
-        <item>Lineup</item>
-        <item>About</item>
+    <string-array name="stage_names">
+        <item>Sun God Stage</item>
+        <item>Dance Stage</item>
+        <item>Midway</item>
     </string-array>
 
 
@@ -53,10 +68,32 @@
 
 
     <!--
+    Titles of the informational sections.
+
+    WARNING: this array MUST be kept in sync with R.array.info_layouts
+    (in res/values/arrays.xml). If there are more information sections than
+    names, they will not be displayed. If there are more names than sections,
+    the application may crash!
+    -->
+    <string-array name="info_titles">
+        <item>Welcome</item>
+        <item>FAQ</item>
+        <item>Don\'t Miss the Music</item>
+        <item>Water program</item>
+        <item>Patrons with disabilities</item>
+        <item>Sun God for a Cause</item>
+        <item>Transportation</item>
+    </string-array>
+
+
+    <!--
     -->
     <array name="info_layout_names">
         <item>info_welcome</item>
+        <item>info_faq</item>
+        <item>info_safety</item>
         <item>info_water</item>
+        <item>info_ada</item>
         <item>info_sgfc</item>
         <item>info_bus</item>
     </array>

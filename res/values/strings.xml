@@ -3,20 +3,6 @@
     <string name="app_name">Sun God Festival</string>
 
     <!--
-    Names of the stages.
-
-    WARNING: this array MUST be kept in sync with R.array.lineup_files
-    (in res/values/arrays.xml). If there are more lineups than stages listed
-    here, they will not be displayed. If there are more stage names than
-    lineups, the application may crash!
-    -->
-    <string-array name="stage_names">
-        <item>Sun God Stage</item>
-        <item>Dance Stage</item>
-        <item>Midway</item>
-    </string-array>
-
-    <!--
     Strings that define how to read the lineup XML.
 
     lineup_xml_tag_performance: the name of the tags that define a single
@@ -39,20 +25,4 @@
     <string name="lineup_xml_attr_opener">with</string>
     <string name="lineup_xml_attr_begin">begin</string>
     <string name="lineup_xml_attr_end">end</string>
-
-
-    <!--
-    Titles of the informational sections.
-
-    WARNING: this array MUST be kept in sync with R.array.info_layouts
-    (in res/values/arrays.xml). If there are more information sections than
-    names, they will not be displayed. If there are more names than sections,
-    the application may crash!
-    -->
-    <string-array name="info_titles">
-        <item>Welcome</item>
-        <item>Water program</item>
-        <item>Sun God for a Cause</item>
-        <item>Transportation</item>
-    </string-array>
 </resources>
