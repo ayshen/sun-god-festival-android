@@ -28,6 +28,8 @@ public class MapFragment extends SherlockFragment {
             return null;
         }
 
-        return new MapView(getActivity());
+        android.widget.ImageView img = new android.widget.ImageView(getActivity());
+        img.setImageResource(R.drawable.f_42);
+        return img;
     }
 }

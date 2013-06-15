@@ -234,7 +234,8 @@ public class LineupView extends View {
         // is one, do something special.
         for(Performance p: mLineup) {
             if(p.begin.intValue() <= targetTime &&
-                    p.end.intValue() >= targetTime) {
+                    p.end.intValue() >= targetTime &&
+                    p.detailLayoutName != null) {
 /*
                 android.widget.Toast.makeText(
                         getContext(),
@@ -244,6 +245,7 @@ public class LineupView extends View {
                 android.content.Intent artistDetailIntent = new android.content.Intent();
                 artistDetailIntent.setClass(getContext(), edu.ucsd.sgf.app.ArtistDetailActivity.class);
                 artistDetailIntent.putExtra("artist_name", p.artist);
+                artistDetailIntent.putExtra("layout_name", p.detailLayoutName);
                 getContext().startActivity(artistDetailIntent);
                 return true;
             }

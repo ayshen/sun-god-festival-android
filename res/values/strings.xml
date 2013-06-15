@@ -25,4 +25,5 @@
     <string name="lineup_xml_attr_opener">with</string>
     <string name="lineup_xml_attr_begin">begin</string>
     <string name="lineup_xml_attr_end">end</string>
+    <string name="lineup_xml_attr_detail">detail</string>
 </resources>

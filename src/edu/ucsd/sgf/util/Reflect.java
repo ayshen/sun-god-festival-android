@@ -38,7 +38,8 @@ public class Reflect {
                 ARTIST_ATTR = null,
                 OPENER_ATTR = null,
                 BEGIN_ATTR = null,
-                END_ATTR = null;
+                END_ATTR = null,
+                DETAIL_ATTR = null;
 
         // Load the strings that define how we will be parsing the XML.
         try {
@@ -52,6 +53,8 @@ public class Reflect {
                     R.string.lineup_xml_attr_begin);
             END_ATTR = res.getString(
                     R.string.lineup_xml_attr_end);
+            DETAIL_ATTR = res.getString(
+                    R.string.lineup_xml_attr_detail);
         }
         catch(Resources.NotFoundException rnfe) {
             Log.e(tag, "can't resolve an XML parser item: " + rnfe.toString());
@@ -75,6 +78,7 @@ public class Reflect {
                 String opener = null;
                 Time begin = null;
                 Time end = null;
+                String detailLayoutName = null;
 
                 // Collect the attributes of the performance tag.
                 for(int i = 0; i < parser.getAttributeCount(); ++i) {
@@ -88,12 +92,18 @@ public class Reflect {
                     else if(parser.getAttributeName(i).equals(END_ATTR))
                         end = Time.fromLineupEncoding(
                                 parser.getAttributeValue(i));
+                    else if(parser.getAttributeName(i).equals(DETAIL_ATTR))
+                        detailLayoutName = parser.getAttributeValue(i);
                 }
 
                 // If the required attributes have been collected, go ahead
                 // and make a Performance object for it.
-                if(artist != null && begin != null && end != null)
-                    lineup.add(new Performance(artist, opener, begin, end));
+                if(artist != null && begin != null && end != null) {
+                    Performance p = new Performance(artist, opener, begin, end);
+                    if(detailLayoutName != null)
+                        p.detailLayoutName = detailLayoutName;
+                    lineup.add(p);
+                }
             }
 
             // Get the next parser event.
@@ -186,5 +196,43 @@ public class Reflect {
             lineups[i] = loadLineupFromXmlFile(res, names[i]);
 
         return lineups;
+    }
+
+
+    public static int artistDetailLayoutIdFromName(Resources res, String name) {
+        String tag = "edu.ucsd.sgf.util.Reflect::artistDetailLayoutIdFromName";
+        Field f = null;
+        Integer i = null;
+        try { f = R.layout.class.getField(name); }
+        catch(NoSuchFieldException nsfe) {
+            Log.e(tag, "no field R.xml." + name);
+            return 0;
+        }
+        catch(NullPointerException npe) {
+            Log.e(tag, "can't resolve R.xml.<null>");
+            return 0;
+        }
+        catch(SecurityException se) {
+            Log.e(tag, "not allowed to reflect on R.xml");
+            return 0;
+        }
+        try { i = new Integer(f.getInt(null)); }
+        catch(IllegalAccessException iaxe) {
+            Log.e(tag, "R.layout." + name + " is not accessible");
+            return 0;
+        }
+        catch(IllegalArgumentException iae) {
+            Log.e(tag, iae.toString());
+            return 0;
+        }
+        catch(NullPointerException npe) {
+            Log.wtf(tag, "needed an instance of R.xml");
+            return 0;
+        }
+        catch(ExceptionInInitializerError eiie) {
+            Log.wtf(tag, "tried to instantiate R.xml");
+            return 0;
+        }
+        return i.intValue();
     }
 }

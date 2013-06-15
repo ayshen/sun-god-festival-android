@@ -18,3 +18,25 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+-keep android.support.v4.app.Fragment { *; }
+-keep android.support.v4.app.FragmentManager { *; }
+-keep android.support.v4.app.FragmentPagerAdapter { *; }
+-keep android.support.v4.view.PagerAdapter { *; }
+-keep android.support.v4.view.PagerTabStrip { *; }
+-keep android.support.v4.view.ViewPager { *; }
+
+-keep com.actionbarsherlock.app.ActionBar { *; }
+-keep com.actionbarsherlock.app.SherlockFragment { *; }
+-keep com.actionbarsherlock.app.SherlockFragmentActivity { *; }
+-keep com.actionbarsherlock.view.MenuItem { *; }
+
+-keep edu.ucsd.sgf.R { *; }
+-keep edu.ucsd.sgf.S { <fields>; public *; }
+-keep edu.ucsd.sgf.app.*;
+-keep edu.ucsd.sgf.util.*;
+-keep edu.ucsd.sgf.view.*;
+
+-dontoptimize
+
+-dontobfuscate

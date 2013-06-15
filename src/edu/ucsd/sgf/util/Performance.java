@@ -7,6 +7,7 @@ public class Performance implements Comparable<Performance> {
     public final String opener;
     public final Time begin;
     public final Time end;
+    public String detailLayoutName;
 
 
     public Performance(String a, Time b, Time e) {
